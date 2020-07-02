@@ -9,7 +9,7 @@ podTemplate(
     volumes: [ 
         secretVolume(secretName: 'kube-config', mountPath: '/root/.kube'),
         hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),
-        persistentVolumeClaim(claimName: 'maven-data-pvc', mountPath: '/root/.m2')
+        persistentVolumeClaim(claimName: 'nfs-pvc', mountPath: '/root/.m2')
     ]
 )
 {
