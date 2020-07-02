@@ -1,5 +1,5 @@
 FROM tomcat:latest
-MAINTAINER ChiSeok, Song <misoboy.kor@gmail.com
+MAINTAINER ChiSeok, Song <misoboy.kor@gmail.com>
 
 # Application Deploy
 RUN rm -rf /usr/local/tomcat/webapps/*
