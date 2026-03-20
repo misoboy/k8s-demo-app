@@ -1,18 +1,50 @@
 # k8s-demo-app
-Kubernetes Demo App for Deploy
 
-### Branch
-    1. k8s-app : Kubernetes 배포 Application
-    2. k8s-config : Kubernetes Config
+> Kubernetes demo application and manifests for deployment pipeline examples — Jenkins Pipeline to Kubernetes deployment reference.
 
-### Example
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-deploy-326CE5?logo=kubernetes&logoColor=white)](https://kubernetes.io)
+[![Jenkins](https://img.shields.io/badge/Jenkins-Pipeline-D33833?logo=jenkins&logoColor=white)](https://jenkins.io)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-app-6DB33F?logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)
 
-  1. Jenkins Pipeline Deployment Example
+## Overview
 
-  ![example1](/assets/example1.png)
+This repository contains the application source and Kubernetes manifests for demonstrating a complete **Jenkins → Kubernetes deployment pipeline**.
 
-  2. Checking the kubernetes pod running status
-  ```bash
-  $ kubectl get pods -A
-  ```
-  <img alt="example2.png" src="assets/example2.png" width="600" height="" >
+## Branches
+
+| Branch | Description |
+|--------|-------------|
+| `k8s-app` | Spring Boot application source (Kubernetes deployment target) |
+| `k8s-config` | Kubernetes configuration and manifest files |
+
+## Pipeline Example
+
+### 1. Jenkins Pipeline Deployment
+
+![Jenkins Pipeline](assets/example1.png)
+
+### 2. Verify Pod Status
+
+```bash
+kubectl get pods -A
+```
+
+<img src="assets/example2.png" width="600">
+
+## Getting Started
+
+```bash
+# Clone the app branch
+git clone -b k8s-app https://github.com/misoboy/k8s-demo-app.git
+
+# Build
+./mvnw clean package
+
+# Apply Kubernetes manifests
+git clone -b k8s-config https://github.com/misoboy/k8s-demo-app.git
+kubectl apply -f k8s-config/
+```
+
+## License
+
+MIT
